@@ -40,7 +40,7 @@ modules:
     sources:
       - type: archive
         url: https://get.cocoatech.com/dashboard/Deckr-Linux-Portable.tar.gz
-        sha256: f7a94f24c27527608f2c27d52fa6afd5069738391d9066514f08005ce9e6e643
+        sha256: 0764feb5b7ef7f509cf78112d7101cf21eff1b33bb1a73da34d163fe1239c744
         dest: Deckr
 
       - type: file
