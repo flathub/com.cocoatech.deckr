@@ -8,7 +8,7 @@ https://www.freedesktop.org/software/appstream/metainfocreator/#/
   <name>Deckr</name>
   <summary>Desktop app used with the Deckr chrome plugin</summary>
   <developer_name>Steve Gehrman</developer_name>
-  <url type="homepage">https://cocoatech.io/deckr</url>
+  <url type="homepage">https://deckr.surf</url>
   <metadata_license>FSFAP</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
   <supports>
@@ -21,6 +21,7 @@ https://www.freedesktop.org/software/appstream/metainfocreator/#/
     <ul>
       <li>Replaces "New Tab" in chrome with a bookmark deck manager</li>
       <li>Share and download bookmark decks online</li>
+      <li>Lots more features. Install it and give it a try.</li>
     </ul>
   </description>
   <launchable type="desktop-id">com.cocoatech.deckr.desktop</launchable>
@@ -31,6 +32,6 @@ https://www.freedesktop.org/software/appstream/metainfocreator/#/
   </screenshots>
   <content_rating type="none"/>
   <releases>
-    <release version="1.1.78" date="2023-06-28"/>
+    <release version="1.1.99" date="2023-07-19"/>
   </releases>
 </component>
