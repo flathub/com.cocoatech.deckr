@@ -32,6 +32,6 @@ https://www.freedesktop.org/software/appstream/metainfocreator/#/
   </screenshots>
   <content_rating type="none"/>
   <releases>
-    <release version="1.1.99" date="2023-07-19"/>
+    <release version="1.2.0" date="2023-07-20"/>
   </releases>
 </component>
