@@ -11,6 +11,7 @@ finish-args:
   - --device=dri
   - --share=network
   - --share=ipc
+  - --talk-name=org.freedesktop.portal.Background
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=xdg-desktop
@@ -45,15 +46,13 @@ modules:
       - install -Dm644 com.cocoatech.deckr.desktop -t /app/share/applications/
     sources:
       - type: archive
-        # DEBUG BUILD
-        # url: https://get.cocoatech.com/dashboard/Deckr-Linux-Portable.tar.gz
-        url: https://get.cocoatech.com/dashboard/Deckr-Debug.tar.gz
-        sha256: 886b2810ce49b94c0a172ab91ad4cd8d6b2576f15fdabf55c66755f3d1cf88ec
+        url: https://get.cocoatech.com/dashboard/Deckr-Linux-Portable.tar.gz
+        sha256: 673a9de155bdab9a8932452aea385da08fc7b6a7a224b8410ad19511e530f5a7
         dest: deckr
 
       - type: archive
         url: https://get.cocoatech.com/dashboard/gpt-libs.tar.gz
-        sha256: efc42880c497ec8760aa868ea64ef7ea0b6c0331410a93855e8d1c3acad25f40
+        sha256: a2ee0c9ea0c89b1406285e9b3c0f323d3e64345d64e4eb7521fb9296cc55131e
         dest: gpt
 
       - type: file
