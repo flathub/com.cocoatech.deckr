@@ -10,7 +10,6 @@ finish-args:
   - --socket=wayland
   - --device=dri
   - --share=network
-  - --share=ipc
   - --talk-name=org.freedesktop.portal.Background
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
@@ -47,12 +46,12 @@ modules:
     sources:
       - type: archive
         url: https://get.cocoatech.com/dashboard/Deckr-Linux-Portable.tar.gz
-        sha256: a1f1c0e615112f3f118fc4fb4bb471aeee8799049d9757b1b52a1055113a5357
+        sha256: 4ed10d432ee696f7b69b6effc1757acaef1b92aa5637112ea2a5c16dd4cb9134
         dest: deckr
 
       - type: archive
         url: https://get.cocoatech.com/dashboard/gpt-libs.tar.gz
-        sha256: 6cb10684780bb0e480924d89c6226c43b34491f6b936c02613add053029a0f0b
+        sha256: 28c326391956222e1f13d921da93d3271e7114943594701bdff6dad6a28f38cd
         dest: gpt
 
       - type: file
