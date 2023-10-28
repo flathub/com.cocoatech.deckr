@@ -8,6 +8,7 @@ finish-args:
   - --share=ipc
   - --socket=fallback-x11
   - --socket=wayland
+  - --socket=pulseaudio
   - --device=dri
   - --share=network
   - --talk-name=org.freedesktop.portal.Background
@@ -19,8 +20,6 @@ finish-args:
   - --filesystem=xdg-music
   - --filesystem=xdg-pictures
   - --filesystem=xdg-videos
-  - --socket=pulseaudio
-  - --env=LD_LIBRARY_PATH=/app/lib
 
 modules:
   - name: deckr
