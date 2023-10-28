@@ -8,6 +8,7 @@ finish-args:
   - --share=ipc
   - --socket=fallback-x11
   - --socket=wayland
+  - --socket=pulseaudio
   - --device=dri
   - --share=network
   - --talk-name=org.freedesktop.portal.Background
@@ -46,12 +47,14 @@ modules:
     sources:
       - type: archive
         url: https://get.cocoatech.com/dashboard/Deckr-Linux-Portable.tar.gz
-        sha256: 4ed10d432ee696f7b69b6effc1757acaef1b92aa5637112ea2a5c16dd4cb9134
+        # url: https://get.cocoatech.com/dashboard/Deckr-Debug.tar.gz
+        sha256: 35dce7ea68a5c4b98d072bed8bb18d4291645157838886a244a147ad7e96310c
         dest: deckr
 
       - type: archive
         url: https://get.cocoatech.com/dashboard/gpt-libs.tar.gz
-        sha256: 28c326391956222e1f13d921da93d3271e7114943594701bdff6dad6a28f38cd
+        # url: https://get.cocoatech.com/dashboard/gpt-debug-libs.tar.gz
+        sha256: 2015bbfcf08c96d0cfe281a14bd885f9c6a8562568b3f44becf36d5a2b6527b8
         dest: gpt
 
       - type: file
@@ -117,3 +120,85 @@ modules:
       - type: git
         url: https://github.com/AyatanaIndicators/libayatana-appindicator.git
         tag: 0.5.91
+
+  # These are the required for media_kit
+  - name: libmpv
+    cleanup:
+      - /include
+      - /lib/pkgconfig
+    buildsystem: meson
+    config-opts:
+      - -Dlibmpv=true
+      - -Ddebug=false
+      - -Dcplayer=false
+      - -Dbuild-date=false
+      - -Dalsa=disabled
+      - -Dmanpage-build=disabled
+      - -Dgpl=false
+    sources:
+      - type: archive
+        url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.36.0.tar.gz
+        sha256: 29abc44f8ebee013bb2f9fe14d80b30db19b534c679056e4851ceadf5a5e8bf6
+        x-checker-data:
+          type: anitya
+          project-id: 5348
+          stable-only: true
+          url-template: https://github.com/mpv-player/mpv/archive/refs/tags/v$version.tar.gz
+    modules:
+      - name: libass
+        cleanup:
+          - /include
+          - /lib/pkgconfig
+        config-opts:
+          - --disable-static
+        sources:
+          - type: git
+            url: https://github.com/libass/libass.git
+            tag: 0.17.1
+            commit: e8ad72accd3a84268275a9385beb701c9284e5b3
+            x-checker-data:
+              type: git
+              tag-pattern: ^(\d\.\d{1,3}\.\d{1,2})$
+
+      - name: nv-codec-headers
+        cleanup:
+          - "*"
+        no-autogen: true
+        make-install-args:
+          - PREFIX=/app
+        sources:
+          - type: git
+            url: https://github.com/FFmpeg/nv-codec-headers.git
+            tag: n12.0.16.0
+            commit: c5e4af74850a616c42d39ed45b9b8568b71bf8bf
+            x-checker-data:
+              type: git
+              tag-pattern: ^n([\d.]+)$
+
+      - name: ffmpeg
+        cleanup:
+          - /include
+          - /lib/pkgconfig
+          - /share/ffmpeg/examples
+        config-opts:
+          - --enable-shared
+          - --enable-gnutls
+          - --enable-libmp3lame
+          - --enable-libopus
+          - --enable-libvorbis
+          - --enable-libmp3lame
+
+          - --disable-static
+          - --disable-debug
+          - --disable-doc
+          - --disable-programs
+          - --disable-encoders
+          - --disable-muxers
+        sources:
+          - type: git
+            url: https://github.com/FFmpeg/FFmpeg.git
+            commit: ea3d24bbe3c58b171e55fe2151fc7ffaca3ab3d2
+            tag: n6.0
+            x-checker-data:
+              type: git
+              tag-pattern: ^n([\d.]{3,7})$
