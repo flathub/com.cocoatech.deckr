@@ -182,14 +182,23 @@ modules:
           - /share/ffmpeg/examples
         config-opts:
           - --enable-shared
-          - --disable-static
           - --enable-gnutls
+          - --enable-libmp3lame
+          - --enable-libopus
+          - --enable-libvorbis
+          - --enable-libmp3lame
+
+          - --disable-static
+          - --disable-debug
           - --disable-doc
           - --disable-programs
           - --disable-encoders
           - --disable-muxers
         sources:
           - type: git
-            url: https://git.ffmpeg.org/ffmpeg.git
-            branch: release/6.0
-            commit: c5039e158d20e85d4d8a2dee3160533d627b839a
+            url: https://github.com/FFmpeg/FFmpeg.git
+            commit: ea3d24bbe3c58b171e55fe2151fc7ffaca3ab3d2
+            tag: n6.0
+            x-checker-data:
+              type: git
+              tag-pattern: ^n([\d.]{3,7})$
