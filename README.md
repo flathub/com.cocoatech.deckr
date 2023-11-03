@@ -8,3 +8,5 @@ For more information: [deckr.surf](https://deckr.surf)
 
 git submodule init
 git submodule update
+
+bump
