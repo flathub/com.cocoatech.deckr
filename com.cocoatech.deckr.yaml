@@ -1,6 +1,6 @@
 app-id: com.cocoatech.deckr
 runtime: org.gnome.Platform
-runtime-version: "44"
+runtime-version: '44'
 sdk: org.gnome.Sdk
 command: deckr
 separate-locales: false
@@ -162,15 +162,15 @@ modules:
 
       - name: nv-codec-headers
         cleanup:
-          - "*"
+          - '*'
         no-autogen: true
         make-install-args:
           - PREFIX=/app
         sources:
           - type: git
             url: https://github.com/FFmpeg/nv-codec-headers.git
-            tag: n12.0.16.0
-            commit: c5e4af74850a616c42d39ed45b9b8568b71bf8bf
+            tag: n12.1.14.0
+            commit: 1889e62e2d35ff7aa9baca2bceb14f053785e6f1
             x-checker-data:
               type: git
               tag-pattern: ^n([\d.]+)$
@@ -197,8 +197,8 @@ modules:
         sources:
           - type: git
             url: https://github.com/FFmpeg/FFmpeg.git
-            commit: ea3d24bbe3c58b171e55fe2151fc7ffaca3ab3d2
-            tag: n6.0
+            commit: d4ff0020b40b524a490cf62eccbd3a318f4c0e58
+            tag: n6.1
             x-checker-data:
               type: git
               tag-pattern: ^n([\d.]{3,7})$
