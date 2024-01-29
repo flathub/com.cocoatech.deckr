@@ -48,13 +48,13 @@ modules:
       - type: archive
         url: https://get.cocoatech.com/dashboard/Deckr-Linux-Portable.tar.gz
         # url: https://get.cocoatech.com/dashboard/Deckr-Debug.tar.gz
-        sha256: f527e771c9194b05e609e579a980b1f15bb196a369485798a0f0d92af1e86076
+        sha256: ca8d11e59a5aaf650fed9a7714efec7867f4e2bbae1060c2c5a2dede47825341
         dest: deckr
 
       - type: archive
         url: https://get.cocoatech.com/dashboard/gpt-libs.tar.gz
         # url: https://get.cocoatech.com/dashboard/gpt-debug-libs.tar.gz
-        sha256: 2cb69c8505e3f15625a621cd3504eac2f9dd10c82219e83ce3223ef1ca2a05e7
+        sha256: bac892e26e54713b106d1c9b31d65e599fbe3b0293779dea66a280ad35f0e782
         dest: gpt
 
       - type: file
