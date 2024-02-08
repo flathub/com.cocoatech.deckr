@@ -11,7 +11,7 @@ finish-args:
   - --socket=pulseaudio
   - --device=dri
   - --share=network
-  - --talk-name=org.freedesktop.portal.Background
+  # - --talk-name=org.freedesktop.portal.Background
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=xdg-desktop
