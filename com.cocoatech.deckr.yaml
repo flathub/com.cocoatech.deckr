@@ -11,7 +11,6 @@ finish-args:
   - --socket=pulseaudio
   - --device=dri
   - --share=network
-  # - --talk-name=org.freedesktop.portal.Background
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
   - --filesystem=xdg-desktop
@@ -48,13 +47,13 @@ modules:
       - type: archive
         url: https://get.cocoatech.com/dashboard/Deckr-Linux-Portable.tar.gz
         # url: https://get.cocoatech.com/dashboard/Deckr-Debug.tar.gz
-        sha256: edfd33ba83cad39505f19a2c71b451423e0a51da0f2ceb60f325d8a65257030d
+        sha256: f909e60085922449b755ede36058c83026d08dafed15462c04bdf98e3e5072c3
         dest: deckr
 
       - type: archive
         url: https://get.cocoatech.com/dashboard/gpt-libs.tar.gz
         # url: https://get.cocoatech.com/dashboard/gpt-debug-libs.tar.gz
-        sha256: 758e4c8e4720478f1090da2922effa9b278a6c28d4251e84d6bdb2842d3cd366
+        sha256: 1d9833f7d7b7dd0ce95910cebab1f152429a90b9f9a426f93f7b07c9a349ab0e
         dest: gpt
 
       - type: file
@@ -109,7 +108,7 @@ modules:
       # https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
       - type: archive
         url: https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz
-        md5: 3c05d53053b3ea69384b5f93d7a4c7c4
+        sha256: b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a
 
   - name: libayatana-appindicator
     buildsystem: cmake-ninja
