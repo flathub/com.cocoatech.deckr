@@ -6,7 +6,7 @@ https://www.freedesktop.org/software/appstream/metainfocreator/#/
 <component type="desktop-application">
   <id>com.cocoatech.deckr</id>
   <name>Deckr</name>
-  <summary>Desktop app used with the Deckr chrome plugin</summary>
+  <summary>Deckr desktop app</summary>
   <developer_name>Steve Gehrman</developer_name>
   <url type="homepage">https://deckr.surf</url>
   <metadata_license>FSFAP</metadata_license>
@@ -28,9 +28,10 @@ https://www.freedesktop.org/software/appstream/metainfocreator/#/
   <screenshots>
     <screenshot type="default">
       <image>https://get.cocoatech.com/dashboard/screenshot.png</image>
+      <caption>Screenshot</caption>
     </screenshot>
   </screenshots>
-  <content_rating type="none"/>
+  <content_rating type="oars-1.1" />
   <releases>
     <release version="2.4.45" date="2024-03-21"/>
   </releases>
