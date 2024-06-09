@@ -26,7 +26,15 @@ finish-args:
   - --filesystem=xdg-music
   - --filesystem=xdg-pictures
   - --filesystem=xdg-videos
-
+cleanup:
+  - /include
+  - /lib/girepository-1.0
+  - /lib/pkgconfig
+  - /libexec
+  - /share/doc
+  - /share/gir-1.0
+  - /share/gtk-doc
+  - /share/vala
 modules:
   - name: deckr
     buildsystem: simple
