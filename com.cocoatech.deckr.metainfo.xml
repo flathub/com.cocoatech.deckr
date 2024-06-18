@@ -33,6 +33,6 @@ https://www.freedesktop.org/software/appstream/metainfocreator/#/
   </screenshots>
   <content_rating type="oars-1.1"/>
   <releases>
-    <release version="2.4.62" date="2024-04-07"/>
+    <release version="2.5.34" date="2024-06-18"/>
   </releases>
 </component>
