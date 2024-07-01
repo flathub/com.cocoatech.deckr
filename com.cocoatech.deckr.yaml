@@ -1,7 +1,14 @@
 app-id: com.cocoatech.deckr
 runtime: org.gnome.Platform
-runtime-version: "44"
+runtime-version: "46"
 sdk: org.gnome.Sdk
+add-extensions:
+  -  org.freedesktop.Platform.ffmpeg-full:
+      version: '23.08'
+      directory: lib/ffmpeg
+      add-ld-path: "."
+      no-autodownload: false
+      autodelete: false
 command: deckr
 separate-locales: false
 finish-args:
@@ -19,7 +26,15 @@ finish-args:
   - --filesystem=xdg-music
   - --filesystem=xdg-pictures
   - --filesystem=xdg-videos
-
+cleanup:
+  - /include
+  - /lib/girepository-1.0
+  - /lib/pkgconfig
+  - /libexec
+  - /share/doc
+  - /share/gir-1.0
+  - /share/gtk-doc
+  - /share/vala
 modules:
   - name: deckr
     buildsystem: simple
@@ -159,45 +174,4 @@ modules:
               type: git
               tag-pattern: ^(\d\.\d{1,3}\.\d{1,2})$
 
-      - name: nv-codec-headers
-        cleanup:
-          - "*"
-        no-autogen: true
-        make-install-args:
-          - PREFIX=/app
-        sources:
-          - type: git
-            url: https://github.com/FFmpeg/nv-codec-headers.git
-            tag: n12.0.16.0
-            commit: c5e4af74850a616c42d39ed45b9b8568b71bf8bf
-            x-checker-data:
-              type: git
-              tag-pattern: ^n([\d.]+)$
 
-      - name: ffmpeg
-        cleanup:
-          - /include
-          - /lib/pkgconfig
-          - /share/ffmpeg/examples
-        config-opts:
-          - --enable-shared
-          - --enable-gnutls
-          - --enable-libmp3lame
-          - --enable-libopus
-          - --enable-libvorbis
-          - --enable-libmp3lame
-
-          - --disable-static
-          - --disable-debug
-          - --disable-doc
-          - --disable-programs
-          - --disable-encoders
-          - --disable-muxers
-        sources:
-          - type: git
-            url: https://github.com/FFmpeg/FFmpeg.git
-            commit: ea3d24bbe3c58b171e55fe2151fc7ffaca3ab3d2
-            tag: n6.0
-            x-checker-data:
-              type: git
-              tag-pattern: ^n([\d.]{3,7})$
