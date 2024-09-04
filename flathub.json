@@ -1,4 +1,6 @@
 {
   "only-arches": ["x86_64"],
-  "disable-external-data-checker": true
+  "disable-external-data-checker": true,
+  "end-of-life": "The application id has been renamed to surf.deckr.deckr.",
+  "end-of-life-rebase": "surf.deckr.deckr"
 }
